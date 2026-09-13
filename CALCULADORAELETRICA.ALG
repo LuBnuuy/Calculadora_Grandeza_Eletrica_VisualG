@@ -162,8 +162,8 @@ inicio
    Cores[8] <- "Cinza"
    Cores[9] <- "Branco"
 
-   // LAÇO PRINCIPAL
-   // Repete o menu atÉ o usuÁrio escolher a opção 5 (Sair).
+   // LAÃ‡O PRINCIPAL
+   // Repete o menu atÃ‰ o usuÃrio escolher a opÃ§Ã£o 5 (Sair).
    
    repita
       MostrarMenu()
