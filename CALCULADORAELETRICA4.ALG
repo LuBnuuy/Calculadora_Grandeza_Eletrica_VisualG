@@ -4,14 +4,13 @@ var
    V, C, R, P: real
    Cores: vetor[0..9] de caractere
 
-// -----------------------------------------------------------------
 // Procedimento que recebe a resistencia calculada e exibe o
 // codigo de cores correspondente, no padrao de 4 faixas:
 //   1a faixa -> 1o digito significativo
 //   2a faixa -> 2o digito significativo
 //   3a faixa -> multiplicador (potencia de 10)
 //   4a faixa -> tolerancia (fixada em Dourado = 5%, a mais comum)
-// -----------------------------------------------------------------
+
 procedimento MostrarCodigoCores(Rcalc: real)
    var
       valor: real
