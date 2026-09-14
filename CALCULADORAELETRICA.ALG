@@ -1,5 +1,6 @@
 algoritmo "CalculadoraEletrica"
 var
+   pera: caractere
    opcao: inteiro
    V, C, R, P: real
    Cores: vetor[0..9] de caractere
@@ -65,6 +66,8 @@ procedimento MostrarCodigoCores(Rcalc: real)
 
          escreval("4a faixa - tolerancia: Dourado (5%)")
       fimse
+      escreval("Precione enter para voltar ao menu...")
+      leia(pera)
    fimprocedimento
 
 // CASO 1 - Calculo da TENSAO
@@ -72,6 +75,7 @@ procedimento MostrarCodigoCores(Rcalc: real)
 
 procedimento CalcularTensao()
    inicio
+      limpatela
       escreval("Calculo da TENSAO (V = R x C)")
       escreva("Digite a Resistencia (ohms): ")
       leia(R)
@@ -79,6 +83,8 @@ procedimento CalcularTensao()
       leia(C)
       V <- R * C
       escreval("A Tensao e: ", V, " V")
+      escreval("Precione enter para voltar ao menu...")
+      leia(pera)
    fimprocedimento
 
 // CASO 2 - Calculo da CORRENTE
@@ -86,6 +92,7 @@ procedimento CalcularTensao()
 
 procedimento CalcularCorrente()
    inicio
+      limpatela
       escreval("Calculo da CORRENTE (C = V / R)")
       escreva("Digite a Tensao (volts): ")
       leia(V)
@@ -97,6 +104,8 @@ procedimento CalcularCorrente()
          C <- V / R
          escreval("A Corrente e: ", C, " A")
       fimse
+      escreval("Precione enter para voltar ao menu...")
+      leia(pera)
    fimprocedimento
 
 // CASO 3 - Calculo da RESISTENCIA
@@ -104,6 +113,7 @@ procedimento CalcularCorrente()
 
 procedimento CalcularResistencia()
    inicio
+      limpatela
       escreval("Calculo da RESISTENCIA (R = V / C)")
       escreva("Digite a Tensao (volts): ")
       leia(V)
@@ -111,6 +121,8 @@ procedimento CalcularResistencia()
       leia(C)
       se (C = 0) entao
          escreval("Erro: Corrente nao pode ser zero!")
+         escreval("Precione enter para voltar ao menu...")
+         leia(pera)
       senao
          R <- V / C
          escreval("A Resistencia calculada e: ", R, " ohms")
@@ -125,6 +137,7 @@ procedimento CalcularResistencia()
 
 procedimento CalcularPotencia()
    inicio
+      limpatela
       escreval("Calculo da POTENCIA (P = V x C)")
       escreva("Digite a Tensao (volts): ")
       leia(V)
@@ -132,12 +145,15 @@ procedimento CalcularPotencia()
       leia(C)
       P <- V * C
       escreval("A Potencia e: ", P, " W")
+      escreval("Precione enter para voltar ao menu...")
+      leia(pera)
    fimprocedimento
 
 // Procedimento responsavel apenas por exibir o menu principal
 
 procedimento MostrarMenu()
    inicio
+      limpatela
       escreval("=== CALCULADORA DE GRANDEZAS ELETRICAS ===")
       escreval("")
       escreval("O que voce deseja calcular?")
@@ -162,8 +178,8 @@ inicio
    Cores[8] <- "Cinza"
    Cores[9] <- "Branco"
 
-   // LAÃ‡O PRINCIPAL
-   // Repete o menu atÃ‰ o usuÃrio escolher a opÃ§Ã£o 5 (Sair).
+   // LAÇO PRINCIPAL
+   // Repete o menu atÉ o usuÁrio escolher a opção 5 (Sair).
    
    repita
       MostrarMenu()
@@ -188,7 +204,10 @@ inicio
             escreval("Encerrando o programa. Ate mais!")
 
          outrocaso
+            limpatela
             escreval("Opcao invalida!")
+            escreval("Precione enter para voltar ao menu...")
+            leia(pera)
 
       fimescolha
 
